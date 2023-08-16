@@ -22,10 +22,26 @@ const data = [
     text: "bonzua",
     value: 5,
   },
+  {
+    text: "damn",
+    value: 3,
+  },
+  {
+    text: "shit",
+    value: 5,
+  },
+  {
+    text: "oh",
+    value: 10,
+  },
+  {
+    text: "wow",
+    value: 5,
+  },
 ];
 
 const fontSizeMapper = (word: { value: number }) => {
-  return Math.log2(word.value);
+  return Math.log2(word.value) * 5 + 16;
 };
 
 const CustomWordCloud = (props: Props) => {
