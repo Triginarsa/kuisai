@@ -1,8 +1,9 @@
-import { OpenAI } from "openai";
+import { Configuration, OpenAIApi } from "openai";
 
-const openai = new OpenAI({
+const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
+const openai = new OpenAIApi(configuration);
 
 interface OutputFormat {
   [key: string]: string | string[] | OutputFormat;
@@ -54,7 +55,7 @@ export async function strict_output(
     }
 
     // Use OpenAI to get a response
-    const response = await openai.chat.completions.create({
+    const response = await openai.createChatCompletion({
       temperature: temperature,
       model: model,
       messages: [
