@@ -41,6 +41,7 @@ const QuizCreation = (props: Props) => {
         topic,
         type,
       });
+      return response.data;
     },
   });
   const form = useForm<Input>({
